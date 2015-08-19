@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Demo</title>
+    <link href="./css/common.css" type="text/css" rel="stylesheet">
+    <style type="text/css">
+    .imgs {
+        margin: 50px auto;
+        max-height: 600px;
+        max-width: 1058px;
+    }
+    
+    .imgs>div {
+        max-width: 100%;
+        float: left;
+        margin: 4.5px;
+        display: inline-block;
+        position: relative;
+    }
+    
+    .textposition {
+        display: block;
+        text-align: center;
+        font-size: 34px;
+        word-wrap: break-word;
+        word-break: normal;
+    }
+    
+    .textposition p {
+        position: absolute;
+        bottom: 50%;
+        color: white;
+    }
+    
+    .change,
+    pic1 img {
+        height: 560px;
+        width: 375px;
+    }
+    
+    .change {
+        text-decoration: none;
+        position: absolute;
+        z-index: 99;
+        background-color: rgba(0, 0, 0, 0.65);
+        opacity: 0;
+        top: 0;
+        transition: opacity 2s ease-out;
+        -webkit-transition: opacity 2s ease-out;
+    }
+    
+    .pic1:hover .change,
+    .textt {
+        opacity: 1;
+    }
+    
+    .pic1:hover .textt {
+        opacity: 1;
+    }
+    
+    .textt {
+        position: absolute;
+        bottom: 40%;
+        text-align: center;
+        font-size: 34px;
+        font-weight:bold;
+        color: white;
+        opacity: 0;
+        z-index: 100;
+        word-wrap: break-word;
+        word-break: normal;
+        transition: opacity 0.5s linear;
+        -webkit-transition: opacity 0.5s linear;
+    }
+    
+    .pic2 a {
+        background: url("./images/鼠标未经过-2.png") no-repeat;
+        height: 280px;
+        width: 398px;
+    }
+    
+    .pic3 a {
+        background: url("./images/鼠标未经过-3.png") no-repeat;
+        height: 280px;
+        width: 250px;
+    }
+    
+    .pic4 a {
+        background: url("./images/鼠标未经过-4.png") no-repeat;
+        height: 270px;
+        width: 660px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <div class="imgs">
+            <div class="pic1">
+                <img src="./images/鼠标未经过-1.png" alt="">
+                <div><a href="./images/鼠标未经过-3.png" class="textt">2012年“书·筑”展: 书籍与建筑的结合</a></div>
+                <a class="change" href="#"></a>
+            </div>
+            <div class="pic2">
+                <a class="textposition" href="#">
+                    <p>2012年“纸非纸”中日纸艺术展</p>
+                </a>
+            </div>
+            <div class="pic3">
+                <a class="textposition" href="#">
+                    <p>2013年中国国际瓦楞展</p>
+                </a>
+            </div>
+            <div class="pic4">
+                <a class="textposition" href="#">
+                    <p>2014年上海πDay</p>
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

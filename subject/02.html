@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta content="../images/logo.png" itemprop="image">
+    <title>纸的时代 - 纸的温度</title>
+    <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/gallery.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+    <script src="../scripts/jquery-1.8.2.min.js"></script>
+    <script language="JavaScript">
+    $(document).ready(function() {
+        var picUrl = new Array("#", "#", "#", "#");
+        $(".text_mask").each(function(index, el) {
+            this.href = picUrl[index];
+        });
+        $(".click_mask").each(function(index, el) {
+            this.href = picUrl[index];
+        });
+    });
+    </script>
+    <div class="header">
+        <ui class="tabs tabs-height">
+            <li class="logo tabs-height">
+                <a href="../index.html"></a>
+            </li>
+            <li class="tag tabs-height"><a href="../index.html">主页</a></li>
+            <li class="tag tabs-height"><a href="./01.html">古纸细语</a></li>
+            <li class="tag tabs-height"><a id="selected" href="./02.html">纸的时代</a></li>
+            <li class="tag tabs-height"><a href="./03.html">民间纸客</a></li>
+            <li class="tag tabs-height"><a href="./04.html">环保纸客</a></li>
+            <li class="tag tabs-height"><a href="./05.html">科技纸客</a></li>
+            <li class="tag tabs-height"><a href="./06.html">桂山桂水</a></li>
+            <li class="tag tabs-height"><a href="./07.html">纸上桂电</a></li>
+        </ui>
+    </div>
+    <div class="content">
+        <div class="gallery">
+            <div class="picture pic1_size">
+                <img src="../images/gallery/1.png" alt="2012年“书·筑”展: 书籍与建筑的结合">
+                <div class="text"><a href="" class="text_mask">2012年“书·筑”展: 书籍与建筑的结合</a></div>
+                <a href="" class="click_mask pic1_size"></a>
+            </div>
+            <div class="picture pic2_size">
+                <img src="../images/gallery/2.png" alt="2012年“纸非纸”中日纸艺术展">
+                <div class="text"><a href="" class="text_mask">2012年“纸非纸”中日纸艺术展</a></div>
+                <a href="" class="click_mask pic2_size"></a>
+            </div>
+            <div class="picture pic3_size">
+                <img src="../images/gallery/3.png" alt="2013年中国国际瓦楞展">
+                <div class="text"><a href="" class="text_mask">2013年中国国际瓦楞展</a></div>
+                <a href="" class="click_mask pic3_size"></a>
+            </div>
+            <div class="picture pic4_size">
+                <img src="../images/gallery/4.png" alt="2014年上海πDay">
+                <div class="text pic4_width"><a href="" class="text_mask">2014年上海πDay</a></div>
+                <a href="" class="click_mask pic4_size"></a>
+            </div>
+        </div>
+        <!-- <div class="todo">
+            <style type="text/css">
+            .todo {
+                min-height: 600px;
+
+                margin: 0 100px;
+                padding: 20px 200px;
+                background: #ffeeff;
+            }
+            
+            .todo h1 {
+                text-align: center;
+            }
+            
+            .todo ul {
+                margin-left: 20px;
+            }
+            
+            .todo p {
+                font-size: 18px;
+            }
+            </style>
+            <h1>TODO</h1>
+            <h3>效果说明</h3>
+            <ul>
+                <li>div组合</li>
+                <li>外层使用margin保留距离，内部使用%划分空间</li>
+                <li>css伪类:hover实现鼠标经过效果</li>
+                <li>为下层文章设计通用的布局</li>
+            </ul>
+        </div> -->
+    </div>
+    <div class="footer">
+        <a href="#">
+            <img src="../images/logo.png">
+            <span>广西第九届网页设计大赛桂林电子科技大学第三小组</span>
+        </a>
+    </div>
+</body>
+
+</html>

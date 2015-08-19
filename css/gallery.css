@@ -1,0 +1,73 @@
+.gallery {
+    margin: 50px auto;
+    min-height: 600px;
+    width: 1058px;
+}
+
+.pic1_size {
+    height: 560px;
+    width: 375px;
+}
+
+.pic2_size {
+    height: 280px;
+    width: 398px;
+}
+
+.pic3_size {
+    height: 280px;
+    width: 250px;
+}
+
+.pic4_size {
+    height: 270px;
+    width: 660px;
+}
+
+.pic4_width{
+	width:660px;
+}
+
+.picture {
+    max-width: 100%;
+    float: left;
+    margin: 4.5px;
+    position: relative;
+}
+
+.text{
+	position: absolute;
+	bottom: 40%;
+    text-align: center;
+    z-index: 100;
+}
+
+.text_mask {
+    text-align: center;
+    font-size: 34px;
+    font-family: Arial;
+    font-weight: bold;
+    margin: 0 15px;
+    color: white;
+    z-index: 100;
+    opacity: 0;
+    word-wrap: break-word;
+    word-break: normal;
+    transition: opacity 0.5s linear;
+    -webkit-transition: opacity 0.5s linear;
+}
+
+.click_mask {
+    text-decoration: none;
+    position: absolute;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.65);
+    opacity: 0;
+    top: 0;
+    transition: opacity 2s ease-out;
+    -webkit-transition: opacity 2s ease-out;
+}
+
+.picture:hover .text_mask,.picture:hover .click_mask{
+	opacity: 1;
+}
