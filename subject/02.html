@@ -21,6 +21,13 @@
         $(".click_mask").each(function(index, el) {
             this.href = picUrl[index];
         });
+        // auto scroll to content center
+        var windowHeight = $(window).height();
+        var scrollValue = Math.round(461 - windowHeight / 2);
+        if (windowHeight < 761 && $(document).scrollTop() != scrollValue) {
+            $.scrollTo(scrollValue, 2000);
+            console.log(scrollValue);
+        };
     });
     </script>
     <div class="header">
