@@ -1,7 +1,11 @@
+.content{
+    text-align: center;
+}
+
 .gallery {
-    margin: 50px auto;
-    min-height: 600px;
+    margin: 20px auto;
     width: 1058px;
+    display: inline-block;
 }
 
 .pic1_size {
@@ -24,8 +28,8 @@
     width: 660px;
 }
 
-.pic4_width{
-	width:660px;
+.pic4_width {
+    width: 660px;
 }
 
 .picture {
@@ -33,11 +37,12 @@
     float: left;
     margin: 4.5px;
     position: relative;
+    text-align: left;
 }
 
-.text{
-	position: absolute;
-	bottom: 40%;
+.text {
+    position: absolute;
+    bottom: 40%;
     text-align: center;
     z-index: 100;
 }
@@ -68,6 +73,7 @@
     -webkit-transition: opacity 2s ease-out;
 }
 
-.picture:hover .text_mask,.picture:hover .click_mask{
-	opacity: 1;
+.picture:hover .text_mask,
+.picture:hover .click_mask {
+    opacity: 1;
 }
