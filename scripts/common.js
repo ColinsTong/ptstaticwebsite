@@ -11,13 +11,13 @@ function scrollToCenter(el) {
     };
 }
 
-function scrollToTop(el) {
+function scrollToTop(el,delay,delayExecute) {
     var elObj = $(el);
     var scrollValue = Math.round($(el).offset().top);
     if ($(document).scrollTop() < scrollValue) {
         setTimeout(function() {
-            $.scrollTo(scrollValue, 2000)
-        }, 500);
+            $.scrollTo(scrollValue, delay)
+        }, delayExecute);
     };
 }
 
