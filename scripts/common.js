@@ -4,9 +4,23 @@ function scrollToCenter(el) {
     var elCenterOffset = Math.round(elObj.offset().top + elObj.height()/2);
     var elBottomOffset = Math.round(elObj.offset().top + elObj.height());
     var scrollValue = Math.round(elCenterOffset - windowHeight / 2);
-    if (windowHeight < elBottomOffset && $(document).scrollTop() != scrollValue) {
+    if (windowHeight < elBottomOffset && $(document).scrollTop() < scrollValue) {
         setTimeout(function() {
             $.scrollTo(scrollValue, 2000)
         }, 500);
     };
+}
+
+function scrollToTop(el) {
+    var elObj = $(el);
+    var scrollValue = Math.round($(el).offset().top);
+    if ($(document).scrollTop() < scrollValue) {
+        setTimeout(function() {
+            $.scrollTo(scrollValue, 2000)
+        }, 500);
+    };
+}
+
+function createNav(links){
+    $('.nav')
 }

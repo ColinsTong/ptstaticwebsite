@@ -50,7 +50,7 @@
 .text_mask {
     text-align: center;
     font-size: 34px;
-    font-family: Arial;
+    font-family: 'Times New Roman', Times, serif;
     font-weight: bold;
     margin: 0 15px;
     color: white;

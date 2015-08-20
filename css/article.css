@@ -1,0 +1,29 @@
+.article {
+    margin: 75px 150px;
+    display: inline-block;
+    max-width: 985px;
+}
+
+.article h1 {
+    color: #f34109;
+    size: 37px;
+    margin-bottom: 75px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.article p {
+    display: block;
+    text-align: left;
+    font-size: 25px;
+    line-height: 45px;
+    color: #333333;
+}
+
+.article a{
+	text-align: left;
+    font-size: 25px;
+}
+
+.article img{
+	margin-top: 102px;
+}
