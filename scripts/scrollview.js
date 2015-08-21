@@ -1,4 +1,6 @@
 $(window).load(function () {
+    //禁用滚动条
+    document.documentElement.style.overflow = 'hidden';
     // 导航点点击事件
     $('.dot').each(function (index, el) {
         $(el).click(function (event) {
@@ -9,11 +11,7 @@ $(window).load(function () {
     $('.next_button_a').click(function (event) {
         scrollToCenter('.scroll_unit:eq(1)', 1000);
     });
-
-    //禁用滚动条
-    document.documentElement.style.overflow = 'hidden';
-
-    //
+    // 添加鼠标滚轮事件
     addMouseWheelHandler(mouseWheelHandler);
 });
 
@@ -45,7 +43,7 @@ function relocateNav() {
 
 var count = 0;
 var __lock = true;
-var scrollDelay = 750;//ms
+var scrollDelay = 750; //ms
 
 function lockRun(handler) {
     if (__lock) {
@@ -54,8 +52,7 @@ function lockRun(handler) {
         setTimeout(function () {
             __lock = true;
         }, scrollDelay);
-    }
-    else {
+    } else {
         console.log('lock is locked!');
     }
 }
@@ -103,7 +100,7 @@ function mouseWheelHandler(e) {
         return false;
     }
     // //文档头部可见，直接滚动到第一页顶部
-    if ($(document).scrollTop() < $('.scroll_view').offset().top) {
+    if (delta < 0 && $(document).scrollTop() < $('.scroll_view').offset().top) {
         mouseWheelToOffset($('.scroll_view').offset().top);
     }
 
@@ -113,8 +110,7 @@ function mouseWheelHandler(e) {
         // 在第一页，只能向下滚动
         if (delta < 0) {
             mouseWheelTo(currentIndex + 1);
-        }
-        else if (delta > 0) {
+        } else if (delta > 0) {
             // 可向上滚至页面顶端
             mouseWheelToOffset(0);
         }
@@ -123,13 +119,11 @@ function mouseWheelHandler(e) {
         if (delta > 0) {
             mouseWheelTo(currentIndex - 1);
         }
-    }
-    else {
+    } else {
         //处于1-6页，可以随意滚动
         if (delta < 0) {
             mouseWheelTo(currentIndex + 1);
-        }
-        else if (delta > 0) {
+        } else if (delta > 0) {
             mouseWheelTo(currentIndex - 1);
         }
     }

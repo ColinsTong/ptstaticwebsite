@@ -4,11 +4,11 @@
 }
 
 .scroll_view img {
-    display: block;
+    vertical-align: top;
 }
 
-.scroll_unit{
-	
+.scroll_unit {
+    text-align: center;
 }
 
 .div_line {
