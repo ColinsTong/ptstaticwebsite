@@ -99,12 +99,14 @@ function mouseWheelHandler(e) {
         console.log('error, current element index is ' + currentIndex);
         return false;
     }
-    // //文档头部可见，直接滚动到第一页顶部
-    if (delta < 0 && $(document).scrollTop() < $('.scroll_view').offset().top) {
-        mouseWheelToOffset($('.scroll_view').offset().top);
-    }
 
     console.log('wheel delta is ' + delta);
+    
+    // 文档头部可见，直接滚动到第一页顶部
+    if (delta < 0 && $(document).scrollTop() < $('.scroll_view').offset().top) {
+        mouseWheelToOffset($('.scroll_view').offset().top);
+        return;
+    }
 
     if (currentIndex == 0) {
         // 在第一页，只能向下滚动
