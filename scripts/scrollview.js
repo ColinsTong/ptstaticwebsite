@@ -1,9 +1,36 @@
 $(window).load(function () {
     //禁用滚动条
     document.documentElement.style.overflow = 'hidden';
+    
+    //键盘按键事件
+    $(document).keydown(function (e) {
+        e = e || event;
+        switch (e.keyCode) {
+            case 32:    //空格
+            case 34:    //Page Down
+            case 39:    //右方向
+            case 40:    //下方向
+                nextPage();
+                break;
+            case 33:    //Page Up
+            case 37:    //左方向
+            case 38:    //上方向
+                prevPage();
+                break;
+            case 35:    //End
+                mouseWheelTo(7);
+            case 36:    //Home
+                mouseWheelTo(0);
+            default:
+                break;
+        }
+    });
+
+    
     // 导航点点击事件
-    $('.dot').each(function (index, el) {
+    $('.nav_link').each(function (index, el) {
         $(el).click(function (event) {
+            // event.preventDefault();
             scrollToCenter('.scroll_unit:eq(' + index + ')', 1000);
         });
     });
@@ -41,7 +68,6 @@ function relocateNav() {
     $('.scorll_nav').css('top', ($(window).height() - $('.scorll_nav').height()) / 2);
 }
 
-var count = 0;
 var __lock = true;
 var scrollDelay = 750; //ms
 
@@ -57,35 +83,42 @@ function lockRun(handler) {
     }
 }
 
+// 闪动导航标题1秒
+function flashHeadline(index) {
+    if (index >= 0 && index <= 7) {
+        setTimeout(function () {
+            $('.headline:eq(' + index + ')').attr('id', 'flash_headline');
+        }, scrollDelay / 2);
+        setTimeout(function () {
+            $('.headline:eq(' + index + ')').removeAttr('id');
+        }, 1000 + scrollDelay / 2);
+    }
+};
+
 function mouseWheelTo(nextIndex) {
     lockRun(function () {
         scrollToCenter('.scroll_unit:eq(' + nextIndex + ')', scrollDelay);
+        flashHeadline(nextIndex);
     });
     console.log('scroll to ' + nextIndex);
 };
 
 function mouseWheelToOffset(offset) {
     lockRun(function () {
-        scrollToValue(offset, scrollDelay);
+        if ($(document).scrollTop() >= offset + 1 || $(document).scrollTop() <= offset - 1) {
+            scrollToValue(offset, scrollDelay);
+            console.log('scroll to ' + offset + 'px');
+        }
     });
-    console.log('scroll to ' + offset + 'px');
 };
 
-// function mouseWheelPrev(currentIndex) {
-//     var nextIndex = currentIndex - 1;
-//     lockRun(function () {
-//         scrollToCenter('.scroll_unit:eq(' + nextIndex + ')', scrollDelay);
-//     });
-//     console.log('scroll to ' + nextIndex);
-// };
+function prevPage() {
+    mouseWheelHandler({ 'wheelDelta': 1 });
+};
 
-// function mouseWheelNext(currentIndex) {
-//     var nextIndex = currentIndex + 1;
-//     lockRun(function () {
-//         scrollToCenter('.scroll_unit:eq(' + nextIndex + ')', scrollDelay);
-//     });
-//     console.log('scroll to ' + nextIndex);
-// }
+function nextPage(currentIndex) {
+    mouseWheelHandler({ 'wheelDelta': -1 });
+}
 
 function mouseWheelHandler(e) {
     // cross-browser wheel delta

@@ -16,25 +16,7 @@
     <script src="../scripts/common.js"></script>
     <script src="../scripts/scrollview.js"></script>
     <script type="text/javascript">
-    document.onkeydown = function(e) {
-        e = e || event;
-        //屏蔽向左的方向键
-        if (e.keyCode == 37) {
-            return false;
-        }
-        //屏蔽向上的方向键
-        if (e.keyCode == 38) {
-            return false;
-        }
-        //屏蔽向右的方向键
-        if (e.keyCode == 39) {
-            return false;
-        }
-        //屏蔽向下的方向键
-        if (e.keyCode == 40) {
-            return false;
-        }
-    }
+
     </script>
     <div class="header">
         <ui class="tabs tabs_height">
@@ -56,7 +38,7 @@
             <div class="scroll_unit" style="position: relative;">
                 <img src="../images/parallaxscroll/1.png" alt="">
                 <div class="next_button">
-                    <a class="next_button_a" href="javascript:void(0);"></a>
+                    <a class="next_button_a" href="#冲糍图"></a>
                 </div>
             </div>
             <div class="scroll_unit"><img src="../images/parallaxscroll/2.png" alt=""></div>
@@ -68,14 +50,22 @@
             <hr class="div_line">
             <div class="scroll_unit"><img src="../images/parallaxscroll/8.png" alt=""></div>
             <ol class="scorll_nav">
-                <li class="dot active">1</li>
+                <li><a class="nav_link" href="#背景"><span class="dot active">1</span><span class="headline">背景</span></a></li>
+                <li><a class="nav_link" href="#冲糍图"><span class="dot">2</span><span class="headline">冲糍图</span></a></li>
+                <li><a class="nav_link" href="#苗寨六月六"><span class="dot">3</span><span class="headline">苗寨六月六</span></a></li>
+                <li><a class="nav_link" href="#哭嫁"><span class="dot">4</span><span class="headline">哭嫁</span></a></li>
+                <li><a class="nav_link" href="#阳春三月"><span class="dot">5</span><span class="headline">阳春三月</span></a></li>
+                <li><a class="nav_link" href="#湘西碾米"><span class="dot">6</span><span class="headline">湘西碾米</span></a></li>
+                <li><a class="nav_link" href="#抗旱图"><span class="dot">7</span><span class="headline">抗旱图</span></a></li>
+                <li><a class="nav_link" href="#结语"><span class="dot">8</span><span class="headline">结语</span></a></li>
+                <!--<li class="dot active"</li>
                 <li class="dot">2</li>
                 <li class="dot">3</li>
                 <li class="dot">4</li>
                 <li class="dot">5</li>
                 <li class="dot">6</li>
                 <li class="dot">7</li>
-                <li class="dot">8</li>
+                <li class="dot">8</li>-->
             </ol>
         </div>
         <!-- <div class="todo">
