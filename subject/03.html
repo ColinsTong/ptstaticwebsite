@@ -7,13 +7,35 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>民间纸客 - 纸的温度</title>
     <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/common.css" type="text/css" rel="stylesheet">
+    <link href="../css/scrollview.css" type="text/css" rel="stylesheet">
 </head>
 
 <body>
     <script src="../scripts/jquery-1.8.2.min.js"></script>
-    <script src="../scripts/jquery.easings.min.js"></script>
-    <script src="../scripts/jquery.slimscroll.min.js"></script>
-    <script src="../scripts/jquery.fullPage.min.js"></script>
+    <script src="../scripts/common.js"></script>
+    <script src="../scripts/scrollview.js"></script>
+    <script type="text/javascript">
+    document.onkeydown = function(e) {
+        e = e || event;
+        //屏蔽向左的方向键
+        if (e.keyCode == 37) {
+            return false;
+        }
+        //屏蔽向上的方向键
+        if (e.keyCode == 38) {
+            return false;
+        }
+        //屏蔽向右的方向键
+        if (e.keyCode == 39) {
+            return false;
+        }
+        //屏蔽向下的方向键
+        if (e.keyCode == 40) {
+            return false;
+        }
+    }
+    </script>
     <div class="header">
         <ui class="tabs tabs_height">
             <li class="logo tabs_height">
@@ -30,7 +52,33 @@
         </ui>
     </div>
     <div class="content">
-        <div class="todo">
+        <div class="scroll_view">
+            <div class="scroll_unit" style="position: relative;">
+                <img src="../images/parallaxscroll/1.png" alt="">
+                <div class="next_button">
+                    <a class="next_button_a" href="javascript:void(0);"></a>
+                </div>
+            </div>
+            <div class="scroll_unit"><img src="../images/parallaxscroll/2.png" alt=""></div>
+            <div class="scroll_unit"><img src="../images/parallaxscroll/3.png" alt=""></div>
+            <div class="scroll_unit"><img src="../images/parallaxscroll/4.png" alt=""></div>
+            <div class="scroll_unit"><img src="../images/parallaxscroll/5.png" alt=""></div>
+            <div class="scroll_unit"><img src="../images/parallaxscroll/6.png" alt=""></div>
+            <div class="scroll_unit"><img src="../images/parallaxscroll/7.png" alt=""></div>
+            <hr class="div_line">
+            <div class="scroll_unit"><img src="../images/parallaxscroll/8.png" alt=""></div>
+            <ol class="scorll_nav">
+                <li class="dot active">1</li>
+                <li class="dot">2</li>
+                <li class="dot">3</li>
+                <li class="dot">4</li>
+                <li class="dot">5</li>
+                <li class="dot">6</li>
+                <li class="dot">7</li>
+                <li class="dot">8</li>
+            </ol>
+        </div>
+        <!-- <div class="todo">
             <style type="text/css">
             .todo {
                 min-height: 600px;
@@ -75,7 +123,7 @@
                 <li><a href="http://www.mi.com/shouhuan">http://www.mi.com/shouhuan</a></li>
                 <li><a href="http://yizeng.me/">http://yizeng.me/</a></li>
             </ul>
-        </div>
+        </div> -->
     </div>
     <div class="footer">
         <a href="#">

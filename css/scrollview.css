@@ -1,0 +1,52 @@
+.scroll_view {
+    width: 100%;
+    text-align: center;
+}
+
+.scroll_view img {
+    display: block;
+}
+
+.scroll_unit{
+	
+}
+
+.div_line {
+    margin: 0 auto;
+    border: 0;
+    height: 2px;
+    width: 75%;
+    background: #f72129;
+    border-radius: 1px;
+}
+
+.next_button {
+    position: absolute;
+    bottom: 150px;
+    width: 100%;
+}
+
+.next_button a {
+    margin: 0 auto;
+    display: block;
+    height: 100px;
+    width: 100px;
+    background: url(../images/parallaxscroll/next.png) center no-repeat;
+}
+
+.next_button a:hover {
+    background: url(../images/parallaxscroll/next_select.png) center no-repeat;
+}
+
+.scorll_nav {
+    width: 20px;
+    left: none;
+    display: block;
+    position: fixed;
+    right: 25px;
+}
+
+.scorll_nav li {
+    display: block;
+    margin: 14px 0;
+}

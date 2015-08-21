@@ -147,7 +147,7 @@ a {
     bottom: 20px;
 }
 
-.dots li {
+.dot {
     display: inline-block;
     width: 20px;
     height: 20px;
@@ -161,7 +161,11 @@ a {
     transition: background .5s, opacity .5s;
 }
 
-.dots li.active {
+.dot.active {
     background: #f34109;
     opacity: 1;
 }
+
+/*.dot:hover{
+    border: 3px solid #f34109;
+}*/
