@@ -36,7 +36,6 @@ function scrollToCenter(el, delay, delayExecute) {
 
 // 滚动到elObj顶部
 function scrollToTop(el, delay, delayExecute) {
-    var elObj = $(el);
     var scrollValue = Math.round($(el).offset().top);
     if ($(document).scrollTop() < scrollValue) {
         setTimeout(function() {
