@@ -1,6 +1,6 @@
 $(window).load(function () {
     //禁用滚动条
-    document.documentElement.style.overflow = 'hidden';
+    // document.documentElement.style.overflow = 'hidden';
     
     //键盘按键事件
     $(document).keydown(function (e) {
@@ -137,7 +137,8 @@ function mouseWheelHandler(e) {
     
     // 文档头部可见，直接滚动到第一页顶部
     if (delta < 0 && $(document).scrollTop() < $('.scroll_view').offset().top) {
-        mouseWheelToOffset($('.scroll_view').offset().top);
+        mouseWheelTo(0);
+        // mouseWheelToOffset($('.scroll_view').offset().top);
         return;
     }
 
