@@ -134,10 +134,13 @@ a {
 }
 
 .slider ul li {
+    display: block;
     float: left;
     width: 100%;
     background-size: contain;
-    min-height: 600px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    min-height: 610px;
 }
 
 .dots {
