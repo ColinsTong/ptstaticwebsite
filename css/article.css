@@ -1,3 +1,7 @@
+.content{
+    text-align: center;
+}
+
 .article {
     margin: 0 150px;
     display: inline-block;
@@ -6,7 +10,7 @@
 
 .article h1 {
     color: #f34109;
-    size: 37px;
+    font-size: 37px;
     margin: 75px 0;
     font-family: 'Times New Roman', Times, serif;
 }
