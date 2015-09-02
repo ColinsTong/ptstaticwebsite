@@ -1,6 +1,6 @@
 $(window).load(function () {
     //禁用滚动条
-    // document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.overflow = 'hidden';
     
     //键盘按键事件
     $(document).keydown(function (e) {
