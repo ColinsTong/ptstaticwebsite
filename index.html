@@ -15,7 +15,7 @@
     <script src="./scripts/jquery.scrollTo.min.js"></script>
     <script src="./scripts/common.js"></script>
     <script language="JavaScript">
-        $(document).ready(function() {
+    $(document).ready(function() {
         var unslider = $('.slider').unslider({
             speed: 500, //  The speed to animate each slide (in milliseconds)
             delay: 3000, //  The delay between slide animations (in milliseconds)
@@ -31,6 +31,17 @@
         });
         // auto scroll to content center
         // scrollToCenter('.content', 2000, 500);
+        if (elOffset('.dots').bottom > $(window).height()) {
+            $('.dots').css('position', 'fixed')
+        }
+        $(document).scroll(function() {
+            if (docOffset().bottom>elOffset('.slider').bottom) {
+                $('.dots').css('position', '')
+            }
+            else{
+                $('.dots').css('position', 'fixed')
+            };
+        })
     });
     </script>
     <div class="header">

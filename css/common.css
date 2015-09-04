@@ -84,7 +84,8 @@ a {
     color: #333333;
 }
 
-.nav a {
+.nav a,
+.nav span {
     font-size: 20px;
     text-decoration: none;
     color: #333333;
@@ -137,10 +138,10 @@ a {
     display: block;
     float: left;
     width: 100%;
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
-    min-height: 610px;
+    min-height: 600px;
 }
 
 .dots {
@@ -168,6 +169,7 @@ a {
     background: #f34109;
     opacity: 1;
 }
+
 
 /*.dot:hover{
     border: 3px solid #f34109;
