@@ -24,6 +24,29 @@ a {
     text-decoration: none;
 }
 
+.changelang{
+    position: absolute;
+    top: 20px;
+    right: 100px;
+    font-size: 13px;
+}
+
+.changelang *{
+    float: left;
+}
+
+.verticalline{
+    height: 18px;
+    width: 1px;
+    margin: 0 3px;
+    background-color: #f34109;
+}
+
+#langselected{
+    color: #f34109;
+}
+
+
 .header {
     margin: 41px auto;
     max-width: 985px;
@@ -98,7 +121,7 @@ a {
 .content {
     min-height: 400px;
     min-width: 1024px;
-    background: #ffffff;
+    /*background: #ffffff;*/
 }
 
 .footer {
