@@ -1,4 +1,4 @@
-$(window).load(function () {
+$(window).ready(function () {
     $('.picunit a').each(function (index, el) {
         $(el).click(function (event) {
             //document.documentElement.style.overflow = 'hidden';
