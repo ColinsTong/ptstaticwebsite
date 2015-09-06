@@ -121,7 +121,7 @@ a {
 .content {
     min-height: 400px;
     min-width: 1024px;
-    /*background: #ffffff;*/
+    background: #ffffff;
 }
 
 .footer {
