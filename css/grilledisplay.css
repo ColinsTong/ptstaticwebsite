@@ -1,0 +1,65 @@
+.content{
+	position: relative;
+	text-align: center;
+}
+
+.grilledisplay{
+	display: inline-block;
+	margin: 30px auto;
+	width: 1015px;
+	height: 550px;
+}
+
+.large, .small{
+	height: 550px;
+	border: 2px solid #ffc733;
+	float: left;
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 580px;
+	transition: background-size 0.5s;
+}
+
+.large{
+	width: 580px;
+}
+
+.small{
+	width: 145px;
+}
+
+.large:hover, .small:hover{
+	background-size: 600px;
+}
+
+.prev, .next{
+	position: absolute;
+	width: 60px;
+	height: 80px;
+	top: 267px;
+	background-color: rgba(0, 0, 0, 0.35);
+	transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	-moz-transition: all 0.5s;
+}
+.prev{
+	background-image: url(../images/grilledisplay/prev.png);
+	background-size: 30%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	left: 0;
+}
+
+.next{
+	background-image: url(../images/grilledisplay/next.png);
+	background-size: 30%;
+	background-position: center center;
+	background-repeat: no-repeat;
+	right: 0;
+}
+
+.prev:hover, .next:hover{
+	background-size: 40%;
+	background-color: rgba(0, 0, 0, 0.65)
+}
