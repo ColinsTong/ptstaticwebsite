@@ -1,12 +1,10 @@
-var page = 10;
+var currentPage = 1;
+var pageMax = 10;
 
 $(window).load(function () {
-    $('.large').each(function (index, el) {
+    $('.slideunit').each(function (index, el) {
         $(el).click(function (event) {
-            //document.documentElement.style.overflow = 'hidden';
-            $('.picdetail').css('width', $(window).width())
-            $('.picdetail').css('height', $(window).height())
-            $('.picdetail').show(500);
+            focusOn(index + 1);
             event.preventDefault();
         });
     });
@@ -24,38 +22,52 @@ $(window).load(function () {
         event.preventDefault();
     });
     $('.next').click(function (event) {
-        page += 1
-        $('.large').css('background-image', 'url(../images/grilledisplay/' + ((page + 1) % 11 + 1) + '.0.jpg)');
-        $('.small').each(function (index, el) {
-            $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + index + 1) % 11 + 1) + '.0.jpg)');
-            // console.log(el);
-        });
+        var nextPage = pageMax;
+        if (currentPage > 0 && currentPage < pageMax - 3) {
+            nextPage = currentPage + 4;
+        }
+        else if (currentPage < pageMax) {
+            nextPage = currentPage + 1;
+        }
+        focusOn(nextPage);
         event.preventDefault();
     });
     $('.prev').click(function (event) {
-        if (page < 0) {
-            page = 10;
+        var nextPage = 1;
+        if (currentPage > 5 && currentPage < pageMax + 1) {
+            nextPage = currentPage - 4;
         }
-        page -= 1;
-        $('.large').css('background-image', 'url(../images/grilledisplay/' + ((page + 1) % 11 + 1) + '.0.jpg)');
-        $('.small').each(function (index, el) {
-            $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + index + 1) % 11 + 1) + '.0.jpg)');
-            // console.log(el);
-        });
+        else if (currentPage >1) {
+            nextPage = currentPage - 1;
+        }
+        focusOn(nextPage);
         event.preventDefault();
     });
-    $('.small').each(function (index, el) {
-        $(el).click(function (event) {
-            $('.large').css('background-image', $(el).css('background-image'));
-            page += (index + 1);
-            $('.small').each(function (i, el) {
-                $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + i + 1) % 11 + 1) + '.0.jpg)');
-                // console.log(el);
-            });
-            event.preventDefault();
-        });
-    });
-
-
-
 });
+
+function focusOn(index) {
+    index = index
+    var elem = $('.slideunit:eq(' + (index - 1) + ')');
+    if (elem.hasClass('large')) {
+        // document.documentElement.style.overflow = 'hidden';
+        $('.picdetail').css('width', $(window).width())
+        $('.picdetail').css('height', $(window).height())
+        $('.picdetail').show(500);
+    }
+    else {
+        var usetime = Math.abs(150 * (4 + (index - currentPage)));
+        if (index <= pageMax) {
+            $('.large').removeClass('large');
+            elem.addClass('large');
+            currentPage = index;
+            console.log('focus on page: ' + currentPage);
+        }
+        var slideValue = ((index - 1) <= pageMax - 4) ? 145 * (index - 1) : 145 * (pageMax - 4);
+        console.log(index);
+        $('.slidecontainer').animate({
+            'left': -slideValue
+        }, usetime, 'swing');
+        console.log(usetime);
+    }
+
+}

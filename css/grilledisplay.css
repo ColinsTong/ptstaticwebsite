@@ -5,13 +5,20 @@
 
 .grilledisplay{
 	display: inline-block;
+	overflow: hidden;
 	margin: 30px auto;
 	width: 1015px;
 	height: 550px;
 	/*transform: translate3d(-500px, 0px, 0px);*/
 }
 
-.large, .small{
+.slidecontainer{
+	position: relative;
+	width: 2465px;
+}
+
+.large, .slideunit{
+	
 	height: 550px;
 	border: 2px solid #ffc733;
 	float: left;
@@ -25,22 +32,23 @@
 	-moz-transition: all 0.5s;
 }
 
-.large, .info{
+.slideunit{
+	width: 145px;
+}
+
+.large{
 	position: relative;
 	width: 580px;
 }
 
-.small{
-	width: 145px;
-}
-
-.large:hover, .small:hover{
+.large:hover, .slideunit:hover{
 	background-size: 600px;
 }
 
 .info{
 	position: absolute;
 	bottom: 0;
+	width: 580px;
 	display: block;
 	padding: 10px 0;
 	color: white;
