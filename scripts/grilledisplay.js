@@ -25,8 +25,9 @@ $(window).load(function () {
     });
     $('.next').click(function (event) {
         page += 1
+        $('.large').css('background-image', 'url(../images/grilledisplay/' + ((page + 1) % 11 + 1) + '.0.jpg)');
         $('.small').each(function (index, el) {
-            $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + index) % 11 + 1) + '.0.jpg)');
+            $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + index + 1) % 11 + 1) + '.0.jpg)');
             // console.log(el);
         });
         event.preventDefault();
@@ -36,8 +37,9 @@ $(window).load(function () {
             page = 10;
         }
         page -= 1;
+        $('.large').css('background-image', 'url(../images/grilledisplay/' + ((page + 1) % 11 + 1) + '.0.jpg)');
         $('.small').each(function (index, el) {
-            $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + index) % 11 + 1) + '.0.jpg)');
+            $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + index + 1) % 11 + 1) + '.0.jpg)');
             // console.log(el);
         });
         event.preventDefault();
@@ -45,6 +47,11 @@ $(window).load(function () {
     $('.small').each(function (index, el) {
         $(el).click(function (event) {
             $('.large').css('background-image', $(el).css('background-image'));
+            page += (index + 1);
+            $('.small').each(function (i, el) {
+                $(el).css('background-image', 'url(../images/grilledisplay/' + ((page + 1 + i + 1) % 11 + 1) + '.0.jpg)');
+                // console.log(el);
+            });
             event.preventDefault();
         });
     });
