@@ -42,8 +42,9 @@ $(window).load(function () {
         event.preventDefault();
     });
     $('.prev').click(function (event) {
-
-        focusOn(1);
+        if (currentPage != 1) {
+            focusOn(1);
+        }
 
         // var nextPage = 1;
         // if (currentPage > 4 && currentPage < pageMax + 1) {
@@ -69,6 +70,7 @@ function focusOn(index) {
     else {
         var usetime = 100 * (5 + Math.abs(index - currentPage));
         if (index <= pageMax) {
+            $('.large span').css('display', 'none');
             $('.large').removeClass('large');
             elem.addClass('large');
             currentPage = index;
@@ -78,7 +80,7 @@ function focusOn(index) {
         console.log(index);
         $('.slidecontainer').animate({
             'left': -slideValue
-        }, usetime, 'swing');
+        }, usetime, 'swing', function () { $('.slideunit span:eq(' + (index - 1) + ')').css('display', 'block') });
         console.log(usetime);
     }
 

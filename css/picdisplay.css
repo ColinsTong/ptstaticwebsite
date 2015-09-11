@@ -1,8 +1,12 @@
+.content{
+	text-align: center;
+}
+
 .picdisplay{
 	max-width: 1050px;
 	margin: 10px auto;
 	font-size: 0;
-
+	display: inline-block;
 }
 
 .picunit{
